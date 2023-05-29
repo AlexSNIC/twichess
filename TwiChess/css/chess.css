@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+} 
+.game-section {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 2rem;
+    position: relative;
+    left: 50%;
+    margin-top: 2rem;
+    padding: 2rem;
+    padding-bottom: 0;
+    transform: translateX(-50%);
+    width: 70%;
+    display: grid;
+    grid-template-columns: 48rem auto;
+}
+#canvas{
+    position: relative;
+    max-width: 48rem;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 0;
+    margin-right: 3rem;
+}
+#game { 
+    position: relative;
+    grid-area: 1 / 2 / 9 / 10; 
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 0;
+
+    overflow: hidden;
+    border-radius: 1rem;
+}
+/*#region Game*/
+#game>div{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sideBar{
+    color: rgb(255, 255, 255);
+    display: flex;
+    aspect-ratio: 1/1;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15%;
+    font-family:'Teko', sans-serif;
+    font-size: 3rem;
+    overflow-y: hidden;
+}
+.bottomSB{
+    padding-top: 0 !important;
+}
+
+
+.wRookSp{
+    background-image: url("../images/chess-textures/pack1/WhiteRook.png");
+}
+.bRookSp{
+    background-image: url("../images/chess-textures/pack1/BlackRook.png");
+}
+.wBishopSp{
+    background-image: url("../images/chess-textures/pack1/WhiteBishop.png");
+}
+.bBishopSp{
+    background-image: url("../images/chess-textures/pack1/BlackBishop.png");
+}
+.wKnightSp{
+    background-image: url("../images/chess-textures/pack1/WhiteKnight.png");
+}
+.bKnightSp{
+    background-image: url("../images/chess-textures/pack1/BlackKnight.png");
+}
+.wQueenSp{
+    background-image: url("../images/chess-textures/pack1/WhiteQueen.png");
+}
+.bQueenSp{
+    background-image: url("../images/chess-textures/pack1/BlackQueen.png");
+}
+.wKingSp{
+    background-image: url("../images/chess-textures/pack1/WhiteKing.png");
+}
+.bKingSp{
+    background-image: url("../images/chess-textures/pack1/BlackKing.png");
+}
+.wPawnSp{
+    background-image: url("../images/chess-textures/pack1/WhitePawn.png");
+}
+.bPawnSp{
+    background-image: url("../images/chess-textures/pack1/BlackPawn.png");
+}
+
+.pieceSp:hover{
+    cursor: pointer;
+}
+
+.selected{
+    background-image: url("../images/chess-textures/selected.png");
+}
+.attacked{
+    background-color: rgb(190, 43, 43) !important; 
+    border: 1px solid rgb(114, 1, 1);
+}
+.checked{
+    background-color: rgb(190, 43, 43) !important; 
+    border: 1px solid rgb(114, 1, 1);
+}
+.select-promote,
+.doCastle,
+.select-en-passant{
+    background-image: none !important;
+    background-color: rgb(137, 70, 226) !important; 
+
+}
+.pawn-promote{
+    display: none;
+    left:0%;
+}
+/*#endregion*/
+
+.info{
+    height: 88.5% ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+}
+.player-score{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(20, 20, 20, 1);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.flex-column{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.score-image{
+    width: 8rem;
+    height: 8rem;
+    background-size: cover;
+    border: 1px solid white;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.score-timer{
+    color: white;
+    font-family: 'Orbitron', monospace, sans-serif;
+    font-size: 2rem;
+}
+.score-timer-tick{
+    color: rgb(134, 134, 134);
+}
+.score-score{
+    color: white;
+    font-size: 1.5rem;
+    border:1px solid white;
+    padding: 0.1rem 0.5rem;
+    text-align: center;
+    min-width: 4rem;
+}
+.resign-button{
+    color: white;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.3s all;
+    width: 2.2rem;
+}
+.resign-button:hover{
+    color: rgb(185, 185, 185);
+}
+
+
+
+
+@media screen and (max-width:1650px){
+    .game-section{
+        width: 80%;
+    }
+}
+@media screen and (max-width:1450px){
+    .game-section{
+        width: 95%;
+    }
+}
+@media screen and (max-width:1220px){
+   
+   .score-image{
+    width: 5rem;
+    height: 5rem;
+    }
+    .score-timer{
+        font-size: 1.5rem;
+    }
+    .player-score{
+        flex-direction: column-reverse;
+        margin: 1rem 0;
+        padding: 0.5rem;
+    }
+}
+@media screen and (max-width:1035px){
+    .game-section{
+        width: 85%;
+        display: flex;
+        flex-flow: column-reverse;
+    }
+    .info{
+        height: auto ;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 1rem;
+    }
+    .player-score{
+        flex-direction: row-reverse;
+    }
+    .flex-column{
+        margin: 0.5rem;
+    }
+    .score-image{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.4rem;
+    }
+    .score-score{
+        font-size: 1.1rem;
+        padding: 0.1rem;
+        min-width: 3rem;
+    }
+    .score-timer{
+        font-size: 1.2rem;
+    }
+    .sideBar{
+        font-size:2.4rem;
+    }
+}
+@media screen and (max-width:625px){
+    .game-section{
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .sideBar{
+        font-size:1.5rem;
+    }
+}
+.promote-screen{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+#blackout-promote{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#showBlack,
+#showWhite{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-family: monospace;
+    font-size: clamp(0.5rem, 3vw, 1.8rem);
+    text-align: center;
+    background-color: rgb(202, 202, 202);
+    width: 50.5%;
+    height: 25%;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 0.4rem;
+}
+.promotes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.promote-image{
+    width: 20%;
+    cursor: pointer;
+}
