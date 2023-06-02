@@ -1,0 +1,188 @@
+.content{
+    width: 70%;
+    height: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1rem;
+    animation: slow-apear 1s ease;
+}
+h2{
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 0.2rem 0.2rem 0.1rem rgb(145, 145, 145);
+}
+h3{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 0.2rem 0.2rem 0.1rem rgb(145, 145, 145);
+    transform: translateY(-50%);
+}
+h4{
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 1.8rem;
+    transform: translateY(-50%);
+}
+.hr{
+    margin: 2rem 0;
+    width: 90%;
+    height: 0.15rem;
+    border-radius: 0.1rem;
+    margin-left: 4%;
+    grid-column: span 2;
+}
+.image{
+    width: 100%;
+    margin-top: 10%;
+}
+.paragraph{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-flow: row;
+    grid-auto-rows: auto;
+    row-gap: 2rem;
+}
+
+p{
+    margin: 3rem;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+.front{
+    animation: slide1 1.5s ease-out;
+}
+.slide2{
+    animation: slide2 2s ease-out;
+}
+.slide3{
+    animation: slide3 2.5s ease-out;
+}
+.slide4{
+    animation: slide4 3s ease-out;
+}
+.slide5{
+    animation: slide5 3.5s ease-out;
+}
+.slide6{
+    animation: slide6 4s ease-out;
+}
+@keyframes slide1 {
+    from{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    33%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide2 {
+    from{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide3 {
+    from{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    66%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide4 {
+    from{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    75%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide5 {
+    from{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    75%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide6 {
+    from{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    85.2%{
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slow-apear {
+    from{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.9;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .paragraph{
+        grid-template-columns: 3fr 2fr;
+    }
+    p{
+        font-size: 1.2rem;
+        margin: 1rem;
+    }
+    .image{
+        margin-top: 33%;
+    }
+    .content{
+        width: 90%;
+    }
+}

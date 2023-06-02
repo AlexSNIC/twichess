@@ -1,0 +1,74 @@
+body{
+    overflow-x: hidden;
+}
+.content{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 2rem 5rem;
+}
+
+.front{
+    text-align: center;
+    color: white;
+    padding: 3rem;
+    animation: smooth-apear 0.5s ease-out;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgb(114, 114, 114);
+}
+.about{
+    margin: 3rem 0;
+    animation: slide-in 1.5s ease;
+}
+#open-more{
+    color: white;
+    cursor: pointer;
+    animation: apear 4s ease-in-out;
+    transition: 0.3s all;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+}
+#open-more:hover{
+    transform: translate3d(0, -0.4rem, 0);
+}
+
+
+
+
+@keyframes smooth-apear {
+    0%{
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes slide-in {
+    0%{
+        transform: translateX(100vw);
+    }
+    50%{
+        transform: translateX(100vw);
+    }
+   90%{
+        transform: translateX(-5%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes apear {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
