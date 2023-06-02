@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="icon" type="image/png" href="../images/logo/page-icon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/introductions.css">
+    <script src="../javascript/default.js"></script>
+    <script src="../javascript/introductions.js"></script>
+    <title>TwiChess</title>
+</head>
+<body>
+    <header>
+        <img class="header-img" onclick="exitPage('../home.html')" src="../images/logo/logoDark.png" alt="Twi Chess Logo">
+        <nav class="header-nav">
+
+            <a class="header-link-min" onclick="toggleNav('block')"><svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </a>
+                    
+            <a class="header-link" onclick="exitPage('./gamemodes.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg>New Game
+            </a>
+
+            <div class="vertical-hr header-hr"></div>
+
+            <a class="header-link link-selected" onclick="exitPage('../home.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg>Home
+            </a>
+            
+            <div class="vertical-hr header-hr"></div>
+
+            <a class="header-link" onclick="exitPage('./support.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+            </svg>Contact Support
+            </a>
+
+        </nav>
+
+        <div id="blackout" onclick="toggleNav('none')"></div>
+        <nav class="sidebar-nav">
+            
+            <a class="closebtn" onclick="toggleNav('none')">&times;</a>
+
+            <a class="sidebar-link link-selected" onclick="exitPage('../home.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg>Home
+            </a>
+
+            <a class="sidebar-link" onclick="exitPage('./gamemodes.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg>New Game
+            </a>
+
+            <a class="sidebar-link" onclick="exitPage('./support.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+            </svg>Contact Support
+            </a>
+        </nav>
+    </header>
+
+    <section class="content bg">
+        <div class="front">
+            <div>
+                <h2>Introduction</h2>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Chess, a game of strategy and skill, has enthralled players for centuries. Whether you're a beginner or looking to sharpen your skills, understanding the fundamentals of chess is essential. In this article, we provide a comprehensive introduction to chess, covering the basic rules, the movement of pieces, and essential strategies to set you on your path to becoming a formidable chess player.</p>
+            </div>            
+        </div>
+
+        <div class="hr front"></div>
+
+        <div class="paragraph">
+            <div class="slide2">
+                <h3>The Chessboard and Setup</h3>
+                <p>A chessboard consists of 64 squares, alternately light and dark in color. Each player starts with 16 pieces: one king, one queen, two rooks, two knights, two bishops, and eight pawns. The board is set up with the rooks placed in the corners, followed by the knights, then the bishops, the queen on her own color, and the king beside her.</p>
+            </div>
+            <img class="image slide2" src="../images/Tutorial/board.PNG" alt="chessboard">
+        </div>
+        <div class="hr slide2"></div>
+        <div class="paragraph">
+            <div class="slide3">
+                <h3>The Chess Pieces and Their Moves</h3>
+                <h4>The Rook</h4>
+                <p>The rook moves in straight lines, horizontally or vertically, any number of squares.</p>
+            </div>
+            <img  class="image slide3" src="../images/Tutorial/rook-move.PNG" alt="rook moves - chess">
+
+            <div class="hr slide3"></div>
+
+            <div class="slide4">
+                <h4>The Bishop</h4>
+                <p>The bishop moves diagonally, any number of squares. Each player has two bishops, one on a light square and one on a dark square. This means that you can only attack with one of them on either white squares and black sqares. </p>
+            </div>  
+            <img class="image slide4" src="../images/Tutorial/bishop-move.PNG" alt="bishop moves - chess">
+
+            <div class="hr slide4"></div>
+
+            <div class="slide5">
+                <h4>The Queen</h4>
+                <p>The queen is the most powerful piece. It can move any number of squares in any direction: horizontally, vertically, or diagonally. You can think of her as both a rook and bishop combined.</p>
+            </div>
+            <img class="image slide5" src="../images/Tutorial/queen-move.PNG" alt="queen moves - chess">
+
+            <div class="hr slide5"></div>
+
+            <div class="slide6">
+                <h4>The Knight</h4>
+                <p>The knight moves in an L-shape, either two squares horizontally and one vertically, or one square horizontally and two vertically. It is the only piece that can "jump" over other pieces.</p>
+            </div>    
+            <img class="image slide6" src="../images/Tutorial/knight-move.PNG" alt="knight moves - chess">
+
+            <div class="hr slide6"></div>
+
+            <div class="slide6">
+                <h4>The Pawn</h4>
+                <p>Depending on the color, pawns move forward one square, but only captures diagonally. On their first move, they have the option to move forward two squares. Pawns are the only pieces that can promote.</p>
+            </div>
+            <img class="image slide6" src="../images/Tutorial/pawn-move.PNG" alt="pawn moves - chess">
+
+            <div class="hr slide6"></div>
+
+            <div class="slide6">
+                <h4>The King</h4>
+                <p>The king is the most important piece. It can move one square in any direction, horizontally, vertically, or diagonally, as long as they are not attacked.</p>
+            </div>
+            <img class="image slide6" src="../images/Tutorial/king-move.PNG" alt="king moves - chess">
+            <div class="hr slide6"></div>
+        </div>
+        
+
+        <div class="paragraph slide6">
+            <div>
+                <h3>Basic Rulesets</h3>
+                <h4>Taking Turns</h4>
+                <p>In chess, players take turns moving pieces. The first move belongs to white.</p>
+            </div>  
+            <img class="image" src="../images/Tutorial/turns.PNG" alt="chess">
+            
+            <div class="hr"></div>
+
+            <div>
+                <h4>Attacking a Piece</h4>
+                <p>To attack, the piece movement must colide with another piece of opposite color. On colision, the movement of the initial piece stops. Same thing happens if the piece movement colides with a piece of the same color.</p>
+            </div>  
+            <img class="image" src="../images/Tutorial/attack.PNG" alt="chess piece attack">
+            
+            <div class="hr"></div>
+            
+            <div>
+                <h4>Knight "Jump"</h4>
+                <p>When we say the knight can "jump" over pieces we refer to the fact that if the knight is boxed in, it can still escape.</p>
+            </div>  
+            <img class="image" src="../images/Tutorial/knight-box.PNG" alt="king moves - chess">
+            
+            <div class="hr"></div>
+
+            <div>
+                <h4>King Movement Restrictions</h4>
+                <p>In the game of chess, kings can not be captured, instead they remain on the board until the end of the game. This means that if you move the king on a spot where it can be captured, it's considered an "illegal move", same goes if you move a piece that is protecting the king.</p>
+            </div>  
+            <img class="image" src="../images/Tutorial/king-movement-restrictions.PNG" alt="king moves - chess">
+
+            <div class="hr"></div>
+
+            <div>
+                <h4>Point System</h4>
+                <p> The point system refers to the "value" of the piece: Pawn - 1p, Knight and Bishop - 3p, Rook - 5p and Queen - 9p. It is usually not recomended to sacrifice a piece with more worth to a piece with less worth.</p>
+            </div>  
+            <img class="image" src="../images/Tutorial/points.PNG" alt="king moves - chess">
+            
+            <div class="hr"></div>
+
+            <div>
+                <h4>En Passant</h4>
+                <p>En Passant is a special chess move that can occur under specific conditions. First, an opponent's pawn moves two squares forward from its starting position. If the moving pawn lands beside an opposite color pawn on an adjacent file (column), the en passant rule is applied. You can only capture on the first turn of the rule.</p>
+            </div>  
+            <img class="image" src="../images/Tutorial/en-passant.PNG" alt="king moves - chess">
+            
+            <div class="hr"></div>
+
+            <div>
+                <h4>Castle</h4>
+                <p>Castling is a defensive chess move that allows the king to move to a safer position while simultaneously developing one of the rooks. The conditions for castling are as follows:
+                    <br>&nbsp; 1. The king and the chosen rook must not have been previously moved during the game.
+                    <br>&nbsp; 2. The squares between the king and the chosen rook must be unoccupied.
+                    <br>&nbsp; 3. There should be no pieces attacking the squares the king passes over or the squares adjacent to the king's final position.
+                    <br>There are two types of castling: Kingside castling and Queenside castling. In Kingside castling the king moves two squares towards the rook on its right, and the rook jumps over the king, landing on the square next to it. In Queenside castling, the king moves two squares towards the rook on its left, and the rook jumps over the king, landing on the square next to it.
+                </p>
+            </div> 
+
+            
+            <div class="image">
+                <img class="image" src="../images/Tutorial/castle0.PNG" alt="king moves - chess">
+                <img class="image" src="../images/Tutorial/castle1.PNG" alt="king moves - chess">
+            </div>
+            
+            <div class="hr"></div>
+
+            <div>
+                <h4>Pawn Promote</h4>
+                <p>Pawns can promote if they reach the last row. Whenever a pawn promotes, it can transform in a bishop, knight, rook or queen of the same color. Usually it's for the best to transform in a queen, as it is the most powerful piece in chess.</p>
+            </div>  
+            <img class="image" src="../images/Tutorial/promote.PNG" alt="king moves - chess">
+            
+            <div class="hr"></div>
+
+            <div>
+                <h4>Check</h4>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The king is in check whenever a piece of opposite color attacks it. When the king is in check, you can only move the king, a piece that can protect the king or a piece that can capture the attacker.</p>
+            </div>
+            <img class="image" src="../images/Tutorial/check.PNG" alt="king moves - chess">
+            <div class="hr"></div>
+
+            <div>
+                <h4>Checkmate</h4>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The goal in chess is to checkmate your opponent's king. Checkmate occurs when the king is under attack (in "check") and cannot escape capture on the next move. The game is won by the player who successfully checkmates their opponent's king.</p>
+            </div>
+            <img class="image" src="../images/Tutorial/checkmate.PNG" alt="king moves - chess">
+            <div class="hr"></div>
+            
+            <div>
+                <h4>Draws</h4>
+                <p>There are multiple ways to draw in chess, first one being the absense of material. This means you don't have enough pieces to checkmate the enemy king. The second way to draw is the absense of activity, meaning you have not capured a piece or moved a pawn in over 50 turns. The third way to draw is by cutting of all the avalable moves of the opposite color. If it's their turn and they can't move anything, then it's a draw. </p>
+            </div>
+            <img class="image" src="../images/Tutorial/draw.PNG" alt="king moves - chess">
+            <div class="hr"></div>
+        </div>
+
+
+
+        <div class="paragraph slide6">
+            <div>
+                <h3>Strategies</h3>
+                <h4>Developing Pieces</h4>
+                <p>In chess, the advantage goes to the person who has the most developed pieces. A developed piece is a piece wich has a purpose. You can give pieces purpose if you get it out of the bottom row. The more space they can freely move, the better. The order in wich you should develop pieces is: Knight, Bishop, Queen and Rook, however, it is good to develop any piece whenever you get the opportunity.</p>
+            </div>
+            <img class="image" src="../images/Tutorial/develop-piece.PNG" alt="chess pieces">
+            <div class="hr"></div>
+        </div>
+        <div class="paragraph slide6">
+            <div>
+                <h4>Safe King</h4>
+                <p>The king is the most important piece in chess, therefore, you have to keep it safe at all times. To keep your king safe, you must prevent checks as often as possible. A good strategy is castling.</p>
+            </div>
+            <img class="image" src="../images/Tutorial/safe-king.PNG" alt="chess pieces">
+            <div class="hr"></div>
+        </div>
+        
+        <div class="paragraph slide6">
+            <div>
+                <h4>2 Rook Checkmate</h4>
+                <p>The 2 Rook checkmate is the easiest checkmate. To checkmate with 2 rooks, you have to trap the king by blocking off one of the sides, then alternate between rooks until you reach the margin.</p>
+            </div>
+            <img class="image" src="../images/Tutorial/rook-checkmate.PNG" alt="chess pieces">
+            <div class="hr"></div>
+        </div>
+        
+        <div class="paragraph slide6">
+            <div>
+                <h4>King and Queen Checkmate</h4>
+                <p>The King and Queen checkmate is a bit more finiky. To checkmate with a Queen, you have to hold the enemy king in "knight opposition", meaning you have to treat the queen as a knight that's always giving checks. Your goal is to bring the enemy king to a corner, where you'll have a bunch of opportunities to checkmate. Just be careful not to draw!</p>
+            </div>
+            <img class="image" src="../images/Tutorial/king-queen-checkmate.PNG" alt="chess pieces">
+            <div class="hr"></div>
+        </div>
+
+        <div class="paragraph slide6">
+            <div>
+                <h4>Forks</h4>
+                <p>"Fork" is a term used in chess refering to attacking two pieces at once. They are usually done with knights, however it's not unusual to do forks with other pieces. </p>
+            </div>
+            <img class="image" src="../images/Tutorial/fork.PNG" alt="chess pieces">
+            <div class="hr"></div>
+        </div>
+
+        <div class="paragraph slide6">
+            <div>
+                <h4>Skewers</h4>
+                <p>"Skewers" are nothing other than tying a lower value piece to a more valuable piece. This way, the lower value piece is unable to move, otherwise you will capture the higher value piece.</p>
+            </div>
+            <img class="image" src="../images/Tutorial/skewer.PNG" alt="chess pieces">
+            <div class="hr"></div>
+        </div>
+    </section>
+
+
+
+
+    <div style="height: 6rem;"></div>
+    <footer></footer>
+    
+</body>
+</html>
