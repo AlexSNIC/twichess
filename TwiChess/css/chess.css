@@ -104,6 +104,7 @@
 }
 .select-promote{
     background-color: rgb(137, 70, 226) !important; 
+    border: 1px solid rgb(102, 42, 180) !important; 
 }
 .doCastle,
 .select-en-passant{
@@ -355,6 +356,7 @@
     height: 100%;
     top: 0;
     right: 0;
+    z-index: 1;
 }
 #blackout-promote{
     position: absolute;

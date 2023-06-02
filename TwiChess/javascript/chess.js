@@ -259,6 +259,11 @@ function selected(row,col,order){
         else if(pos.classList.contains('selected')){
             if(eval(`sq`+(order)).classList.contains('select-en-passant'))
                 eval(`sq`+(order)).classList.add('en-passant');
+            if(eval(`sq`+(order)).classList.contains('select-promote')){
+                eval(`sq`+(order)).classList.add('promote');
+                showPromote("White", order);
+                return;
+            }
             move(order);
             checkForLocked("b");
         }
@@ -271,6 +276,7 @@ function chosePromote(piece, order = promotePiece[1], color = promotePiece[2]){
     document.querySelector(".promote-screen").style.display = "none";
     document.querySelector("#show" + color).style.display = "none";
     move(order);
+    checkForLocked(color == "Black"? "w" : "b");
 }
 
 function showPromote(color, order){
@@ -317,12 +323,12 @@ function move(order, castle = false){
     if(pieceClass == "wPawnSp" || pieceClass == "bPawnSp"){
         lastPawnMove = 0;
         if(pieceClass == "bPawnSp" && eval(`sq`+order).classList.contains("promote")){
-            
+            eval(`sq`+order).classList.remove("promote")
             pieceClass = promotePiece[0];
             pointBalance -= (pointValue(promotePiece[0].substr(1)) - 1);
         }
         if(pieceClass == "wPawnSp" && eval(`sq`+order).classList.contains("promote")){
-            
+            eval(`sq`+order).classList.remove("promote")
             pieceClass = promotePiece[0];
             pointBalance += (pointValue(promotePiece[0].substr(1)) - 1);
         }
@@ -345,7 +351,7 @@ function move(order, castle = false){
     //#endregion Pawn
 
     if(eval("sq" + order).classList.contains("attacked")){
-
+        lastPawnMove = 0;
         if(pieceColor[0] == "w"){
             bPiecesRemaining--;
             pointBalance += pointValue(eval("sq" + order).classList.item(2).substr(1));
@@ -481,13 +487,13 @@ function move(order, castle = false){
     }
 
     if(repeat.count == 6){
-        gameOver('draw', "due to repetition");
+        gameOver('draw', "", "due to repetition");
     }
     if(lastPawnMove == 100){
-        gameOver('draw', 'due to absense of pawn movement');
+        gameOver('draw', "", 'due to absense of activity');
     }
     if(drawByPieces){
-        gameOver('draw', 'not enough material');
+        gameOver('draw', "", 'due to not enough material');
     }
 
 
@@ -721,7 +727,6 @@ function pawnSelect(order,row,col,color, ipm = true){
                 eval(`sq` + (order + 7)).classList.add("attacked");
             }
             else if(!isLocked && check == 1){
-                console.log("aaa")
                 if(eval(`sq` + (order + 7)).classList.contains("line") || eval(`sq` + (order + 7)).classList.contains("attacker"))
                 eval(`sq` + (order + 7)).classList.add("attacked");
             }
@@ -1407,11 +1412,9 @@ function winCrt(color){
         }
         for(let i = 1; i <= 64; i++){
             if(eval("sq" + i).classList.contains("selected")){
-                console.log("selected", i);
                 canProtect = true;
             }
             if(eval("sq" + i).classList.contains("attacker") && eval("sq" + i).classList.contains("attacked")){
-                console.log("attacked", i);
                 canProtect = true;
             }
         }
@@ -1420,8 +1423,6 @@ function winCrt(color){
     }
     return true;
 }
-
-
 function gameOver(crt, color, message){
     let winTitle = document.getElementById("win-title");
     let winSubtitle = document.getElementById("win-subtitle");
@@ -1461,6 +1462,7 @@ function removeLocalStorage(){
     localStorage.removeItem("doCastleWhite");
     localStorage.removeItem("enPassant");
     localStorage.removeItem("ipm");
+    localStorage.removeItem("startingColor");
 }
 
 //#region Timer
@@ -1538,7 +1540,9 @@ function tableChange(update = false){
         return;
     }
 
+
     let scaleModifyer = whiteTurn == true? 1 : -1;
+    document.querySelector(".promote-screen").style.transform = `scaleY(${scaleModifyer})`
     if(settings.rotate == "flip"){
         game.style.transition = "0.4s";
         setTimeout(()=>{
