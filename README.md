@@ -1,2 +1,3 @@
 # Project-02-TwiChess
-
+This project was made for a thrilling competition where I set out to improve my web development skills. It has been an exciting journey filled with valuable lessons. Throughout the development process, I entered deep into the intricacies of JavaScript, mastering its core mechanics and exploring its potential for creating dynamic and interactive web experiences. Additionally, I dived into CSS animation, discovering the power of visually engaging transitions and effects. I learned how to "breathe life" into a website by incorporating CSS animations to HTML elements. This project not only showcases my dedication to web development but also reflects my passion for creating immersive and captivating online spaces. I am thrilled to share this project with you.
+           
