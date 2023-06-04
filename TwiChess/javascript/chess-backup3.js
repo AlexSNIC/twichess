@@ -1536,7 +1536,7 @@ function tableChange(update = false){
                 eval("sq" + i).style.transform = `scaleY(1)`;
             }
         }
-        game.style.transform = `scaleY(1)`;
+        
         return;
     }
 

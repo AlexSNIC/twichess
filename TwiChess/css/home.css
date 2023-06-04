@@ -1,5 +1,6 @@
 body{
     overflow-x: hidden;
+    width: 100vw;
 }
 .content{
     display: flex;
@@ -19,20 +20,31 @@ body{
     margin: 3rem 0;
     animation: slide-in 1.5s ease;
 }
-#open-more{
+.links{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.open-more{
     color: white;
     cursor: pointer;
     animation: apear 4s ease-in-out;
     transition: 0.3s all;
-    text-decoration: underline;
-    text-decoration-thickness: 0.1rem;
+    margin: 1rem 2rem;
 }
-#open-more:hover{
+.open-more:hover{
     transform: translate3d(0, -0.4rem, 0);
 }
 
 
-
+@media screen and (max-width: 550px) {
+    .content{
+        width: 100%;
+        margin: 0;
+        padding: 2rem;
+    }   
+}
 
 @keyframes smooth-apear {
     0%{

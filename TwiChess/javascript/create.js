@@ -61,12 +61,25 @@ function setup(){
         if(event.key == "e"){
             toolSelect("eraser");
         }
-        if(event.key == "c"){
-            toolSelect("color");
-        }
         if(event.key == "w"){
             toolSelect("color");
         }
+        if(event.key == "c"){
+            clearTable();
+        }
+        if(event.key == "d"){
+            tableDraw('default');
+        }
+        if(event.key == "s"){
+            dataSave();
+        }
+        if(event.key == "l"){
+            dataLoad();
+        }
+        if(event.key == "a"){
+            dataLoad();
+        }
+        
     })
 }
 

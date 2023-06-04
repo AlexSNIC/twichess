@@ -106,7 +106,7 @@
     background-color: rgba(114, 114, 114, 0.6);
     display: flex;
     flex-direction: row;
-    
+    animation: apear 1.2s ease;
 }
 .draw{
     display: flex;
@@ -283,5 +283,16 @@ h2{
     p.p-rules{
         margin-left: 1rem;
         font-size: 0.6rem;
+    }
+}
+@keyframes apear {
+    from{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
