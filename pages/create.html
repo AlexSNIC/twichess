@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="icon" type="image/png" href="../images/logo/page-icon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/create.css">
+    <script src="../javascript/default.js"></script>
+    <script src="../javascript/create.js" defer></script>
+    <title>Create - Twichess</title>
+</head>
+<body>
+    <header>
+        <img class="header-img" onclick="exitPage('../home.html')" src="../images/logo/logoDark.png" alt="Twi Chess Logo">
+        <nav class="header-nav">
+
+            <a class="header-link-min" onclick="toggleNav('block')"><svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </a>         
+            
+            <a class="header-link" onclick="exitPage('./gamemodes.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg>New Game
+            </a>
+
+            <div class="vertical-hr header-hr"></div>
+
+            <a class="header-link link-selected" onclick="exitPage('../home.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg>Home
+            </a>
+            
+            <div class="vertical-hr header-hr"></div>
+
+            <a class="header-link" onclick="exitPage('./support.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+            </svg>Contact Support
+            </a>
+
+        </nav>
+
+        <div id="blackout" onclick="toggleNav('none')"></div>
+        <nav class="sidebar-nav">
+            
+            <a class="closebtn" onclick="toggleNav('none')">&times;</a>
+
+            <a class="sidebar-link link-selected" onclick="exitPage('../home.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg>Home
+            </a>
+
+            <a class="sidebar-link" onclick="exitPage('./gamemodes.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg>New Game
+            </a>
+
+            <a class="sidebar-link" onclick="exitPage('./support.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+            </svg>Contact Support
+            </a>
+        </nav>
+    </header>
+
+
+
+
+    <section class="content">
+        <div class="draw">
+            <div id="game"></div>
+            <div class="tools">
+                <img class="tool" id="pawn-tool" src="../images/chess-textures/pack1/WhitePawn.png" onclick="toolSelect('pawn')">
+                <img class="tool" id="bishop-tool" src="../images/chess-textures/pack1/WhiteBishop.png" onclick="toolSelect('bishop')">
+                <img class="tool" id="knight-tool" src="../images/chess-textures/pack1/WhiteKnight.png" onclick="toolSelect('knight')">
+                <img class="tool" id="rook-tool" src="../images/chess-textures/pack1/WhiteRook.png" onclick="toolSelect('rook')">
+                <img class="tool" id="queen-tool" src="../images/chess-textures/pack1/WhiteQueen.png" onclick="toolSelect('queen')">
+                <img class="tool" id="king-tool" src="../images/chess-textures/pack1/WhiteKing.png" onclick="toolSelect('king')">
+                <img class="tool" id="color-tool" src="../images/tools/color-select-White.png" onclick="toolSelect('color')">
+                <img class="tool" id="eraser-tool" src="../images/tools/eraser.png" onclick="toolSelect('eraser')">
+            </div>
+            <div class="shortcuts">
+                <button class="shortcut" onclick="clearTable()">Clear</button>
+                <button class="shortcut" onclick="tableDraw('default')">Default</button>
+                <button class="shortcut" onclick="dataSave()">Save</button>
+                <button class="shortcut" onclick="dataLoad()">Load</button>
+            </div>
+        </div>
+        <div class="options-rules">
+            <h2>Options</h2>
+            <h3>Starting Color</h3>
+                <div class="color-settings">
+                    <p>White &nbsp;&nbsp;<input type="radio" name="starting-color" value="white" checked></p>
+                    <p>Black &nbsp;&nbsp;<input type="radio" name="starting-color" value="black"></p>
+                </div>
+            <div class="hr"></div>
+            <p><h3 style="display: inline;">Time:</h3> 
+                <select id="time" class="select-local">
+                    <option value="60">1h</option>
+                    <option value="45">45min</option>
+                    <option value="30">30min</option>
+                    <option value="25">25min</option>
+                    <option value="20" selected>20min</option>
+                    <option value="15">15min</option>
+                    <option value="10">10min</option>
+                    <option value="5">5min</option>
+                    <option value="3">3min</option>
+                    <option value="2">2min</option>
+                    <option value="1">1min</option>
+                </select>
+            </p>
+            <div class="hr"></div>
+            <h3>King Castle</h3>
+            <table class="castle-rules">
+                <tr>
+                    <td>
+                        <p>White</p>
+                    </td>
+                    <td>
+                        <p>Black</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="p-rules"> Kingside &nbsp;&nbsp;&nbsp; <input type="checkbox" id="white-right-castle" class="options-checkbox-rules" checked></p>
+                        <p class="p-rules"> Queenside  <input type="checkbox" id="white-left-castle" class="options-checkbox-rules" checked></p>
+                    </td>
+                    <td>
+                        <p class="p-rules"> Kingside &nbsp;&nbsp;&nbsp; <input type="checkbox" id="black-right-castle" class="options-checkbox-rules" checked></p>
+                        <p class="p-rules"> Queenside  <input type="checkbox" id="black-left-castle" class="options-checkbox-rules" checked></p>
+                    </td>
+                </tr>
+            </table>
+            <div class="hr"></div>
+            <h3>Advanced Settings</h3>
+            <div class="advanced-settings">
+                <p style="display: inline;">En-passant</p>
+                <input checked type="checkbox" name="en-passant-local" id="en-passant" class="options-checkbox-rules">
+                <p style="display: inline;">Pawn Jump</p>
+                <input checked type="checkbox" name="ipm-local" id="ipm" class="options-checkbox-rules">
+            </div>
+            <div class="options-buttons">
+                <button class="options-button" onclick="submitTable()">Save & Play</button>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+
+
+    <div style="height: 6rem;"></div>
+    <footer></footer>
+    
+
+    
+</body>
+</html>

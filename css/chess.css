@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+} 
+.game-section {
+    background-color: #00000044;
+    border-radius: 2rem;
+    position: relative;
+    left: 50%;
+    margin-top: 2rem;
+    padding: 2rem;
+    transform: translateX(-50%);
+    width: 70%;
+    display: grid;
+    grid-template-columns: 48rem auto;
+    animation: apear 0.8s ease-in;
+}
+@keyframes apear {
+    from{
+        opacity: 0;
+    }
+    33%{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#canvas{
+    position: relative;
+    
+}
+#game { 
+    position: relative;
+    grid-area: 1 / 2 / 9 / 10; 
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 0;
+
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: 0s all;
+}
+/*#region Game*/
+#game>div{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wRookSp{
+    background-image: url("../images/chess-textures/pack1/WhiteRook.png");
+}
+.bRookSp{
+    background-image: url("../images/chess-textures/pack1/BlackRook.png");
+}
+.wBishopSp{
+    background-image: url("../images/chess-textures/pack1/WhiteBishop.png");
+}
+.bBishopSp{
+    background-image: url("../images/chess-textures/pack1/BlackBishop.png");
+}
+.wKnightSp{
+    background-image: url("../images/chess-textures/pack1/WhiteKnight.png");
+}
+.bKnightSp{
+    background-image: url("../images/chess-textures/pack1/BlackKnight.png");
+}
+.wQueenSp{
+    background-image: url("../images/chess-textures/pack1/WhiteQueen.png");
+}
+.bQueenSp{
+    background-image: url("../images/chess-textures/pack1/BlackQueen.png");
+}
+.wKingSp{
+    background-image: url("../images/chess-textures/pack1/WhiteKing.png");
+}
+.bKingSp{
+    background-image: url("../images/chess-textures/pack1/BlackKing.png");
+}
+.wPawnSp{
+    background-image: url("../images/chess-textures/pack1/WhitePawn.png");
+}
+.bPawnSp{
+    background-image: url("../images/chess-textures/pack1/BlackPawn.png");
+}
+
+.pieceSp:hover{
+    cursor: pointer;
+}
+
+.selected{
+    background-image: url("../images/chess-textures/selected.png");
+}
+.attacked{
+    background-color: rgb(190, 43, 43) !important; 
+    border: 1px solid rgb(114, 1, 1);
+}
+.checked{
+    background-color: rgb(190, 43, 43) !important; 
+    border: 1px solid rgb(114, 1, 1);
+}
+.select-promote{
+    background-color: rgb(137, 70, 226) !important; 
+    border: 1px solid rgb(102, 42, 180) !important; 
+}
+.doCastle,
+.select-en-passant{
+    background-image: none;
+    background-color: rgb(137, 70, 226) !important; 
+}
+.pawn-promote{
+    display: none;
+    left:0%;
+}
+/*#endregion*/
+
+.info{
+    height: 88.5% ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+}
+.player-score{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(20, 20, 20, 1);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.flex-column{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.score-image{
+    width: 8rem;
+    height: 8rem;
+    background-size: cover;
+    border-radius: 1rem;
+}
+
+.score-timer{
+    color: white;
+    font-family: 'Orbitron', monospace, sans-serif;
+    font-size: 2rem;
+}
+.score-timer-tick{
+    color: rgb(134, 134, 134);
+}
+.score-score{
+    color: white;
+    font-size: 1.5rem;
+    border:1px solid white;
+    padding: 0.1rem 0.5rem;
+    text-align: center;
+    min-width: 4rem;
+}
+.resign-button{
+    color: white;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.3s all;
+    width: 2.2rem;
+}
+.resign-button:hover{
+    color: rgb(185, 185, 185);
+}
+.settings{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+.settings:hover{
+    color: rgb(172, 172, 172);
+}
+
+#blackout-game{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 8;
+}
+.sidebar-game{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    
+
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-game .closebtn {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    font-size: 3rem;
+    margin-right: 3rem;
+    text-decoration: none;
+    color: rgb(207, 207, 207);
+    cursor: pointer;
+  }
+.sidebar-game .closebtn:hover {
+    color: white;
+}
+
+.sidebar-game .settings-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sidebar-game input[type = radio]{
+    accent-color: gray;
+    width: 50%;
+    height: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.sidebar-game h2{
+    margin: 4rem 0 2rem 0;
+    text-align: center;
+    font-size: 2rem;
+}
+.sidebar-game h3{
+    text-align: center;
+    margin: 0.3rem;
+}
+.sidebar-game .settings-submit{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+    width: 10rem;
+    padding: 0.2rem 2rem;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    font-size: 1.5rem;
+    font-family: monospace;
+    font-weight: 800;
+    border: 0;
+    border-radius: 1.5rem;
+    transition: .2s all;
+}.sidebar-game .settings-submit:hover{
+    background-color: rgb(48, 48, 48);
+}
+.color-selected{
+    border: 0.5rem solid rgb(192, 55, 13);
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:1600px){
+    .game-section{
+        width: 80%;
+    }
+}
+@media screen and (max-width:1450px){
+    .game-section{
+        width: 95%;
+    }
+}
+@media screen and (max-width:1225px){
+   
+   .score-image{
+    width: 5rem;
+    height: 5rem;
+    }
+    .score-timer{
+        font-size: 1.5rem;
+    }
+    .player-score{
+        flex-direction: column-reverse;
+        margin: 1rem 0;
+        padding: 0.5rem;
+    }
+}
+@media screen and (max-width:1035px){
+    .game-section{
+        width: 85%;
+        display: flex;
+        flex-flow: column-reverse;
+    }
+    .info{
+        height: auto ;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 1rem;
+    }
+    .player-score{
+        flex-direction: row-reverse;
+    }
+    .flex-column{
+        margin: 0.5rem;
+    }
+    .score-image{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.4rem;
+    }
+    .score-score{
+        font-size: 1.1rem;
+        padding: 0.1rem;
+        min-width: 3rem;
+    }
+    .score-timer{
+        font-size: 1.2rem;
+    }
+    .sideBar{
+        font-size:2.4rem;
+    }
+    .color-selected{
+        border: 0.2rem solid rgb(192, 55, 13);
+    }
+}
+@media screen and (max-width:625px){
+    .game-section{
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .sideBar{
+        font-size:1.5rem;
+    }
+}
+.promote-screen{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+#blackout-promote{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#showBlack,
+#showWhite{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-family: monospace;
+    font-size: clamp(0.5rem, 3vw, 1.8rem);
+    text-align: center;
+    background-color: rgb(202, 202, 202);
+    width: 50.5%;
+    height: 25%;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 0.4rem;
+}
+.promotes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.promote-image{
+    width: 20%;
+    cursor: pointer;
+}
+.win-display{
+    min-width: 26rem;
+    z-index: 12;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 1rem;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(100vw, -50%);
+    background-color: rgb(190, 190, 190);
+    transition: 0.6s all ease-in-out;
+}
+.win-blackout{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    
+}
+#win-title{
+    font-size: 2.6rem;
+    font-family: monospace, sans-serif;
+    color: black;
+    font-weight: 800;
+}
+#win-subtitle{
+    font-size: 1.5rem;
+    font-family: monospace, sans-serif;
+    color: black;
+    font-weight: 500;
+}
+.win-image{
+    width: 10rem;
+    margin-top: 3rem;
+    background-color: #eee;
+    border: 0.2rem solid black;
+    border-radius: 1rem;
+    margin-bottom: 5rem;
+}
+.win-blackout{
+    display: none;
+    position: fixed;
+    z-index: 11;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+.medal{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 5rem;
+    transform: translate(1.5rem, -1rem);
+}
+.win-titles{
+    width: 100%;
+    padding-top: 1rem;
+    background-color: rgb(139, 138, 134);
+    
+}
+.win-button{
+    margin: 0 1rem;
+    background-color: gray;
+    color: #FFF;
+    font-size: 2rem;
+    font-family: monospace, sans-serif;
+    border: 0;
+    border-radius: 1rem;
+    padding: 0.2rem 1rem;
+    transition: 0.3s all;
+}
+.win-button:hover{
+    background-color: rgb(160, 160, 160);
+}

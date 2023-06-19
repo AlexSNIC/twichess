@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="icon" type="image/png" href="./images/logo/page-icon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <script src="./javascript/default.js"></script>
+    <title>Home - TwiChess</title>
+</head>
+<body>
+    <header>
+        <img class="header-img" onclick="exitPage('./home.html')" src="./images/logo/logoDark.png" alt="Twi Chess Logo">
+        <nav class="header-nav">
+            
+            <a class="header-link-min" onclick="toggleNav('block')"><svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </a>
+
+            
+            
+            <a class="header-link" onclick="exitPage('./pages/gamemodes.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg>New Game
+            </a>
+
+            <div class="vertical-hr header-hr"></div>
+
+            <a class="header-link" onclick="exitPage('./home.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg>Home
+            </a>
+            
+            <div class="vertical-hr header-hr"></div>
+
+            <a class="header-link" onclick="exitPage('./pages/support.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+            </svg>Contact Support
+            </a>
+
+        </nav>
+
+        <div id="blackout" onclick="toggleNav('none')"></div>
+        <nav class="sidebar-nav">
+            
+            <a class="closebtn" onclick="toggleNav('none')">&times;</a>
+
+            <a class="sidebar-link" onclick="exitPage('./home.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg>Home
+            </a>
+
+            <a class="sidebar-link" onclick="exitPage('./pages/gamemodes.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg>New Game
+            </a>
+
+            <a class="sidebar-link" onclick="exitPage('./pages/support.html')"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+            </svg>Contact Support
+            </a>
+        </nav>
+    </header>
+    <section class="content">
+
+        <div class="front">
+            <h1>Welcome</h1>
+            <h2>Thank you for being here!</h2>
+        </div>
+        
+        <div class="about bg max-width">
+            <h2>• Who am I?</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; Greetings, chess enthusiast! If you have a passion for chess and love playing with friends, then you've come to the right place!<br>
+                I am a professional chess player who shares your passion for the game and possesses extensive knowledge in web technology.
+                After three years of experience, I proudly present to you TwiChess, a platform where chess meets innovation.
+                I encourage you to explore my work and share your valuable feedback with me <b><a style="color:white" href="./pages/support.html">here</a></b>.
+                Your thoughts mean the world to me.</p>
+            <h2>• Why play here?</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; While my platform may not be the most optimized chess project online, I am committed to achieving perfection.
+                I actively refine my platform to cater to your needs, constantly seeking ways to improve. I value your input and believe that together, we can grow and enhance the chess experience.
+                TwiChess offers a diverse array of tools and resources to help you improve your chess skills in your own unique way. Once again, thank you for being a part of my community!
+            </p>
+            <h2>• About this project</h2>
+        
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; 
+                This project was made for a thrilling competition where I set out to improve my web development skills. It has been an exciting journey filled with valuable lessons. Throughout the development process, I entered deep into the intricacies of JavaScript, mastering its core mechanics and exploring its potential for creating dynamic and interactive web experiences. Additionally, I dived into CSS animation, discovering the power of visually engaging transitions and effects. I learned how to "breathe life" into a website by incorporating CSS animations to HTML elements. This project not only showcases my dedication to web development but also reflects my passion for creating immersive and captivating online spaces. I am thrilled to share this project with you.
+            </p>
+        </div>
+        
+        <div class="links">
+            <h2 class="open-more" onclick="exitPage('./pages/gamemodes.html')">Play Now</h2>
+            <h2 class="open-more" onclick="exitPage('./pages/introductions.html')">Chess Introductions</h2>
+        </div>
+    </section>
+
+
+    <div style="height: 6rem;"></div>
+    <footer></footer>
+    
+    <script src="./javascript/home.js"></script>
+</body>
+</html>
